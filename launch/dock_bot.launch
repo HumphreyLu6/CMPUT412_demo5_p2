@@ -10,6 +10,7 @@
     <arg name="cam_info_topic" default="/camera/rgb/camera_info" /> <!--/kinect_head/rgb/camera_info put /camera/rgb/camera_info-->
     <arg name="output_frame" default="/base_link" /> <!-- camera_link also tried-->
 
+    <node name="demo5_p2" pkg="demo5_p2" type="dock_bot.py" output="screen"/>
     <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
         <param name="marker_size"           type="double" value="$(arg marker_size)" />
         <param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
@@ -19,4 +20,5 @@
         <remap from="camera_image"  to="$(arg cam_image_topic)" />
         <remap from="camera_info"   to="$(arg cam_info_topic)" /> 
     </node>
+
 </launch>
